@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block contents %}
+<div class="row mt-5">
+    <div class="col-12 text-center">
+        <h1>회원가입</h1>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <form method="POST" action=".">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label">NAME</label>
+                <input type="text" class="form-control bgw" id="username" placeholder="name" name="username">
+            </div>
+            <div class="mb-3">
+                <label for="useremail" class="form-label">EMAIL</label>
+                <input type="email" class="form-control bgw" id="useremail" placeholder="useremail" name="useremail">
+                </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">PASSWORD</label>
+                <input type="password" class="form-control bgw" id="password" placeholder="password" name="password">
+            </div>
+            <div class="mb-3">
+                <label for="re-password" class="form-label">RETYPE PASSWORD</label>
+                <input type="password" class="form-control bgw" id="re-password" placeholder="retype password" name="re-password">
+            </div>
+            <div class="col-12">
+                <span style="color:red;">{{ error }}</span>
+            </div>
+            <button type="submit" class="btn btn-primary">REGIST</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

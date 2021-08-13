@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block contents %}
+<div class="row mt-5">
+    <div class="col-12 text-center">
+        <h1>DJANGO HOMEPAGE</h1>
+    </div>
+</div>
+<div class="row mt-5">
+    {% if request.session.user %}
+    <div class="col-12">
+        <button type="button" class="btn btn-primary btn-block" onclick="location.href='/fcuser/logout/'">LOGOUT</button>
+    </div>
+    {% else %}
+    <div class="col-6">
+        <button type="button" class="btn btn-primary btn-block" onclick="location.href='/fcuser/login/'">LOGIN</button>
+    </div>
+    <div class="col-6">
+        <button type="button" class="btn btn-primary btn-block" onclick="location.href='/fcuser/register/'">JOIN</button>
+    </div>
+    {% endif %}
+</div>
+<div class="row mt-5">
+    <div class="col-12">
+        <button type="button" class="btn btn-primary btn-block" onclick="location.href='/board/list/'">BOARD</button>
+    </div>
+</div>
+{% endblock %}
